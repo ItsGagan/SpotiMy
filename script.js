@@ -162,3 +162,17 @@ document.getElementById('previous').addEventListener('click', ()=>{
     masterPlay.classList.add('fa-pause-circle');
     
 })
+
+document.getElementById('backward').addEventListener('click', ()=>{ 
+   if(audioElement.currentTime <= 5)
+       audioElement.currentTime = 0;
+    
+    else audioElement.currentTime -= 5;
+})
+
+document.getElementById('forward').addEventListener('click', ()=>{ 
+   if(audioElement.currentTime >= audioElement.duration - 5)
+       audioElement.currentTime = audioElement.duration;
+    
+    else audioElement.currentTime += 5;
+})
