@@ -27,7 +27,7 @@ let songs = []
 
 for(let i=0 ; i<10 ; i++) {
     let j = Math.random()%10;  
-    songs.push({songName: songs1[j], filePath: "songs/${j+1}.mp3", coverPath: "covers/${j+1}.jpg"})
+    songs.push({songName: songs1[j], filePath: "songs/${j+1}.mp3", coverPath: "covers/${j+1}.jpg"});
 }
 
 songItems.forEach((element, i)=>{ 
