@@ -10,18 +10,25 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 let songItemPlay = document.getElementsByClassName('songItemPlay')
 
-let songs = [
-    {songName: "Pal Pal Dil ke Paas - [Title Track]", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
-    {songName: "Khairiyat - [Chhichhore]", filePath: "songs/2.mp3", coverPath: "covers/2.jpg"},
-    {songName: "Shayad - [Love Aaj Kal]", filePath: "songs/3.mp3", coverPath: "covers/3.jpg"},
-    {songName: "Ik Vaari Aa - [Raabta]", filePath: "songs/4.mp3", coverPath: "covers/4.jpg"},
-    {songName: "Phir Kabhi - [M.S. Dhoni]", filePath: "songs/5.mp3", coverPath: "covers/5.jpg"},
-    {songName: "Soch Na Sake - [Airlift]", filePath: "songs/2.mp3", coverPath: "covers/6.jpg"},
-    {songName: "Darkhaast - [Shivaay]", filePath: "songs/2.mp3", coverPath: "covers/7.jpg"},
-    {songName: "Kesariya - [Brahmastra]", filePath: "songs/2.mp3", coverPath: "covers/8.jpg"},
-    {songName: "Jo Bheji thi Duaa - [Shanghai]", filePath: "songs/2.mp3", coverPath: "covers/9.jpg"},
-    {songName: "Pachtaoge - [Music Video]", filePath: "songs/4.mp3", coverPath: "covers/10.jpg"},
+let songs1 = [
+    "Pal Pal Dil ke Paas - [Title Track]",
+    "Khairiyat - [Chhichhore]",
+    "Shayad - [Love Aaj Kal]",
+    "Ik Vaari Aa - [Raabta]",
+    "Phir Kabhi - [M.S. Dhoni]",
+    "Soch Na Sake - [Airlift]",
+    "Darkhaast - [Shivaay]",
+    "Kesariya - [Brahmastra]",
+    "Jo Bheji thi Duaa - [Shanghai]",
+    "Pachtaoge - [Music Video]"
 ]
+
+let songs = []
+
+for(let i=0 ; i<10 ; i++) {
+    let j = Math.random()%10;  
+    songs.push({songName: songs1[j], filePath: "songs/${j+1}.mp3", coverPath: "covers/${j+1}.jpg"})
+}
 
 songItems.forEach((element, i)=>{ 
     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
@@ -176,3 +183,5 @@ document.getElementById('forward').addEventListener('click', ()=>{
     
     else audioElement.currentTime += 5;
 })
+
+
